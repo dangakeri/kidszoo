@@ -80,7 +80,7 @@ class Vocab extends StatelessWidget {
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.25,
             child: Container(
-              padding: EdgeInsets.only(top: 40, left: 10),
+              padding: EdgeInsets.only(top: 10, left: 10),
               height: MediaQuery.of(context).size.height * 1,
               color: Colors.white,
               child: Wrap(
