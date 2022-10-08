@@ -13,12 +13,12 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: const Text(
-          "Kidzoo",
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.w500,
-            color: Colors.black,
+        title: Hero(
+          tag: 'kids',
+          child: Image.asset(
+            'assets/kidzoo.png',
+            height: 40,
+            width: 40,
           ),
         ),
       ),
@@ -30,11 +30,8 @@ class Home extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 18),
             child: Column(
               children: [
-                Row(
-                  children: const [],
-                ),
                 const SizedBox(
-                  height: 30,
+                  height: 20,
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.85,
@@ -46,12 +43,39 @@ class Home extends StatelessWidget {
                     crossAxisSpacing: 15,
                     childAspectRatio: 0.8,
                     children: const [
-                      CardWidget(),
-                      CardWidget(),
-                      CardWidget(),
-                      CardWidget(),
-                      CardWidget(),
-                      CardWidget(),
+                      CardWidget(
+                        icon: Icon(
+                          Icons.abc,
+                          size: 33,
+                        ),
+                        title: 'Numbers',
+                        subtitle: '(numero)',
+                      ),
+                      CardWidget(
+                        icon: Icon(Icons.abc),
+                        title: 'Alphabets',
+                        subtitle: '(numero)',
+                      ),
+                      CardWidget(
+                        icon: Icon(Icons.abc),
+                        title: 'Numbers',
+                        subtitle: '(numero)',
+                      ),
+                      CardWidget(
+                        icon: Icon(Icons.abc),
+                        title: 'Numbers',
+                        subtitle: '(numero)',
+                      ),
+                      CardWidget(
+                        icon: Icon(Icons.abc),
+                        title: 'Numbers',
+                        subtitle: '(numero)',
+                      ),
+                      CardWidget(
+                        icon: Icon(Icons.abc),
+                        title: 'Numbers',
+                        subtitle: '(numero)',
+                      ),
                     ],
                   ),
                 ),
@@ -65,8 +89,14 @@ class Home extends StatelessWidget {
 }
 
 class CardWidget extends StatelessWidget {
+  final Icon icon;
+  final String title;
+  final String subtitle;
   const CardWidget({
     Key? key,
+    required this.icon,
+    required this.title,
+    required this.subtitle,
   }) : super(key: key);
 
   @override
@@ -83,20 +113,20 @@ class CardWidget extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          SvgPicture.asset("assets/leaf.svg"),
+          icon,
           const SizedBox(
             height: 35,
           ),
-          const Text(
-            "Numbers",
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          Text(
+            title,
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           const SizedBox(
             height: 10,
           ),
-          const Text(
-            "(numero)",
-            style: TextStyle(fontSize: 16),
+          Text(
+            subtitle,
+            style: const TextStyle(fontSize: 16),
           ),
         ],
       ),

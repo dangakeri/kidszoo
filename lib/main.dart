@@ -14,9 +14,9 @@ class MyApp extends StatelessWidget {
         const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Kidszoo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.orange.shade700,
       ),
       home: const SplashScreen(),
     );
