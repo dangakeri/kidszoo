@@ -37,9 +37,10 @@ class SplashScreen extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const Text(
-                  'KidsZoo',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                Image.asset(
+                  'assets/kidszoo.png',
+                  height: 200,
+                  width: 200,
                 )
               ],
             ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kidszoo/consts/app_colors.dart';
+import 'package:text_to_speech/text_to_speech.dart';
 
 class Vocab extends StatelessWidget {
   const Vocab({super.key});
@@ -9,18 +10,6 @@ class Vocab extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.backGroundColor,
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(
-              Icons.arrow_back,
-              color: Colors.black,
-            )),
-      ),
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -28,49 +17,60 @@ class Vocab extends StatelessWidget {
             width: MediaQuery.of(context).size.width * 0.75,
             // margin: EdgeInsets.symmetric(horizontal: 20),
             child: Column(
-              children: const [
-                SizedBox(
-                  height: 50,
+              children: [
+                const SizedBox(
+                  height: 30,
                 ),
-                Text(
+                Row(
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: const Icon(Icons.arrow_back)),
+                  ],
+                ),
+                const Text(
                   'Letters',
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.w900,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
-                Text(
+                const Text(
                   'Match the correct\nAlphabet Letter by\nPlacing it on the\nscreen',
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 80,
                 ),
-                Text(
+                const Text(
                   'A',
                   style: TextStyle(fontSize: 90, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
-                Text(
+                const Text(
                   'A = AXE',
                   style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
-                Text(
+                const Text(
                   'E',
                   style: TextStyle(fontSize: 90, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
-                Text(
+                const Text(
                   'E = EGG',
                   style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
                 ),
@@ -80,11 +80,12 @@ class Vocab extends StatelessWidget {
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.25,
             child: Container(
-              padding: EdgeInsets.only(top: 10, left: 10),
+              padding: const EdgeInsets.only(top: 20, left: 10),
               height: MediaQuery.of(context).size.height * 1,
               color: Colors.white,
               child: Wrap(
                 children: const [
+                  SizedBox(width: 5),
                   TextWidget(text: 'A'),
                   SizedBox(width: 5),
                   TextWidget(text: 'B'),
@@ -139,14 +140,14 @@ class Vocab extends StatelessWidget {
                 ],
               ),
             ),
-          ),
+          )
         ],
       ),
     );
   }
 }
 
-class TextWidget extends StatelessWidget {
+class TextWidget extends StatefulWidget {
   final String text;
   const TextWidget({
     Key? key,
@@ -154,10 +155,22 @@ class TextWidget extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<TextWidget> createState() => _TextWidgetState();
+}
+
+class _TextWidgetState extends State<TextWidget> {
+  TextToSpeech tts = TextToSpeech();
+  @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(fontSize: 50, fontWeight: FontWeight.w900),
+    return GestureDetector(
+      onTap: () {
+        String text = widget.text;
+        tts.speak(text);
+      },
+      child: Text(
+        widget.text,
+        style: const TextStyle(fontSize: 50, fontWeight: FontWeight.w900),
+      ),
     );
   }
 }

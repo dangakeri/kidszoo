@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kidszoo/consts/app_colors.dart';
+import 'package:kidszoo/ui/shapes.dart';
 import 'package:kidszoo/ui/vocab.dart';
+
+import 'numbers.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -17,9 +20,9 @@ class Home extends StatelessWidget {
         title: Hero(
           tag: 'kids',
           child: Image.asset(
-            'assets/kidzoo.png',
-            height: 40,
-            width: 40,
+            'assets/kidszoo.png',
+            height: 200,
+            width: 200,
           ),
         ),
       ),
@@ -45,9 +48,10 @@ class Home extends StatelessWidget {
                     childAspectRatio: 0.8,
                     children: [
                       CardWidget(
-                        icon: const Icon(
-                          Icons.abc,
-                          size: 33,
+                        image: Image.asset(
+                          'assets/numbers logo.png',
+                          height: 80,
+                          width: 80,
                         ),
                         title: 'Numbers',
                         subtitle: '(numeros)',
@@ -56,23 +60,41 @@ class Home extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      const Vocab()));
+                                      const Numbers()));
                         },
                       ),
                       CardWidget(
-                        icon: Icon(Icons.abc),
+                        image: Image.asset(
+                          'assets/reading logo.png',
+                          height: 80,
+                          width: 80,
+                        ),
                         title: 'Reading',
                         subtitle: '(Leer)',
                         callBack: () {},
                       ),
                       CardWidget(
-                        icon: Icon(Icons.abc),
+                        image: Image.asset(
+                          'assets/Shapes logo.png',
+                          height: 80,
+                          width: 80,
+                        ),
                         title: 'Shapes',
                         subtitle: '(Formas)',
-                        callBack: () {},
+                        callBack: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      const Shapes()));
+                        },
                       ),
                       CardWidget(
-                        icon: Icon(Icons.abc),
+                        image: Image.asset(
+                          'assets/Vocab logo.png',
+                          height: 80,
+                          width: 80,
+                        ),
                         title: 'Vocab & Letters',
                         subtitle: '(Vocabulario & Letras)',
                         callBack: () {
@@ -84,13 +106,21 @@ class Home extends StatelessWidget {
                         },
                       ),
                       CardWidget(
-                        icon: Icon(Icons.abc),
+                        image: Image.asset(
+                          'assets/analysis.png',
+                          height: 80,
+                          width: 80,
+                        ),
                         title: 'Learning Analysis',
                         subtitle: '(numero)',
                         callBack: () {},
                       ),
                       CardWidget(
-                        icon: Icon(Icons.abc),
+                        image: Image.asset(
+                          'assets/settings.png',
+                          height: 80,
+                          width: 80,
+                        ),
                         title: 'Settings',
                         subtitle: '(numero)',
                         callBack: () {},
@@ -108,16 +138,16 @@ class Home extends StatelessWidget {
 }
 
 class CardWidget extends StatelessWidget {
-  final Icon icon;
+  final Image image;
   final String title;
   final String subtitle;
   final VoidCallback callBack;
   const CardWidget({
     Key? key,
-    required this.icon,
     required this.title,
     required this.subtitle,
     required this.callBack,
+    required this.image,
   }) : super(key: key);
 
   @override
@@ -136,9 +166,9 @@ class CardWidget extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            icon,
+            image,
             const SizedBox(
-              height: 35,
+              height: 10,
             ),
             Text(
               title,
