@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kidszoo/consts/app_colors.dart';
+import 'package:kidszoo/ui/reading.dart';
+import 'package:kidszoo/ui/settings.dart';
 import 'package:kidszoo/ui/shapes.dart';
+import 'package:kidszoo/ui/stories.dart';
 import 'package:kidszoo/ui/vocab.dart';
 
 import 'numbers.dart';
@@ -12,7 +14,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backGroundColor,
+      backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.transparent,
@@ -21,14 +23,14 @@ class Home extends StatelessWidget {
           tag: 'kids',
           child: Image.asset(
             'assets/kidszoo.png',
-            height: 200,
-            width: 200,
+            height: 150,
+            width: 150,
           ),
         ),
       ),
       body: ListView(
         physics: const BouncingScrollPhysics(),
-        shrinkWrap: true,
+        // shrinkWrap: true,
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18),
@@ -41,7 +43,7 @@ class Home extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.85,
                   width: double.infinity,
                   child: GridView.count(
-                    physics: const NeverScrollableScrollPhysics(),
+                    // physics: const NeverScrollableScrollPhysics(),
                     mainAxisSpacing: 15,
                     crossAxisCount: 2,
                     crossAxisSpacing: 15,
@@ -54,7 +56,7 @@ class Home extends StatelessWidget {
                           width: 80,
                         ),
                         title: 'Numbers',
-                        subtitle: '(numeros)',
+                        subtitle: '(Nombres)',
                         callBack: () {
                           Navigator.push(
                               context,
@@ -70,8 +72,14 @@ class Home extends StatelessWidget {
                           width: 80,
                         ),
                         title: 'Reading',
-                        subtitle: '(Leer)',
-                        callBack: () {},
+                        subtitle: '(en train de lire)',
+                        callBack: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      const Reading()));
+                        },
                       ),
                       CardWidget(
                         image: Image.asset(
@@ -80,7 +88,7 @@ class Home extends StatelessWidget {
                           width: 80,
                         ),
                         title: 'Shapes',
-                        subtitle: '(Formas)',
+                        subtitle: '(formes)',
                         callBack: () {
                           Navigator.push(
                               context,
@@ -96,7 +104,7 @@ class Home extends StatelessWidget {
                           width: 80,
                         ),
                         title: 'Vocab & Letters',
-                        subtitle: '(Vocabulario & Letras)',
+                        subtitle: '(vocabulaire et lettres)',
                         callBack: () {
                           Navigator.push(
                               context,
@@ -107,13 +115,19 @@ class Home extends StatelessWidget {
                       ),
                       CardWidget(
                         image: Image.asset(
-                          'assets/analysis.png',
+                          'assets/stories.png',
                           height: 80,
                           width: 80,
                         ),
-                        title: 'Learning Analysis',
-                        subtitle: '(numero)',
-                        callBack: () {},
+                        title: 'Stories',
+                        subtitle: '(histoires)',
+                        callBack: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      const Stories()));
+                        },
                       ),
                       CardWidget(
                         image: Image.asset(
@@ -122,8 +136,14 @@ class Home extends StatelessWidget {
                           width: 80,
                         ),
                         title: 'Settings',
-                        subtitle: '(numero)',
-                        callBack: () {},
+                        subtitle: '(réglages)',
+                        callBack: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      const Settings()));
+                        },
                       ),
                     ],
                   ),
@@ -158,8 +178,19 @@ class CardWidget extends StatelessWidget {
         height: 150,
         width: 300,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Theme.of(context).cardColor,
           borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.1),
+
+              spreadRadius: 2,
+
+              blurRadius: 2,
+
+              offset: const Offset(0, 3), // changes position of shadow
+            ),
+          ],
         ),
         child: Column(
           children: [
@@ -172,7 +203,10 @@ class CardWidget extends StatelessWidget {
             ),
             Text(
               title,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const SizedBox(
               height: 10,

@@ -2,13 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:kidszoo/consts/app_colors.dart';
 import 'package:text_to_speech/text_to_speech.dart';
 
-class Vocab extends StatelessWidget {
+class Vocab extends StatefulWidget {
   const Vocab({super.key});
 
   @override
+  State<Vocab> createState() => _VocabState();
+}
+
+class _VocabState extends State<Vocab> {
+  String activeLetter = '';
+  String activeLetterContent = '';
+  TextToSpeech tts = TextToSpeech();
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backGroundColor,
+      backgroundColor: Theme.of(context).backgroundColor,
       extendBodyBehindAppBar: true,
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -18,16 +26,14 @@ class Vocab extends StatelessWidget {
             // margin: EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
-                const SizedBox(
-                  height: 30,
-                ),
+                const SizedBox(height: 30),
                 Row(
                   children: [
                     IconButton(
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        icon: const Icon(Icons.arrow_back)),
+                        icon: const Icon(Icons.arrow_back_ios_new)),
                   ],
                 ),
                 const Text(
@@ -40,39 +46,37 @@ class Vocab extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                const Text(
+                Text(
                   'Match the correct\nAlphabet Letter by\nPlacing it on the\nscreen',
                   style: TextStyle(
                     fontSize: 20,
+                    color: Theme.of(context).buttonColor,
                   ),
                 ),
                 const SizedBox(
                   height: 80,
                 ),
-                const Text(
-                  'A',
-                  style: TextStyle(fontSize: 90, fontWeight: FontWeight.bold),
+                Text(
+                  activeLetter,
+                  style: TextStyle(
+                    fontSize: 90,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).buttonColor,
+                  ),
                 ),
                 const SizedBox(
                   height: 30,
                 ),
-                const Text(
-                  'A = AXE',
-                  style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                Text(
+                  activeLetterContent,
+                  style: TextStyle(
+                    fontSize: 50,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).buttonColor,
+                  ),
                 ),
                 const SizedBox(
                   height: 50,
-                ),
-                const Text(
-                  'E',
-                  style: TextStyle(fontSize: 90, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                const Text(
-                  'E = EGG',
-                  style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -84,63 +88,82 @@ class Vocab extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 1,
               color: Colors.white,
               child: Wrap(
-                children: const [
-                  SizedBox(width: 5),
-                  TextWidget(text: 'A'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'B'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'C'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'D'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'E'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'F'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'G'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'H'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'I'),
-                  SizedBox(width: 10),
-                  TextWidget(text: 'J'),
-                  SizedBox(width: 10),
-                  TextWidget(text: 'K'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'L'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'M'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'N'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'O'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'P'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'Q'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'R'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'S'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'T'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'U'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'V'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'W'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'X'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'Y'),
-                  SizedBox(width: 5),
-                  TextWidget(text: 'Z'),
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        activeLetter = 'A';
+                        activeLetterContent = 'A = AXE';
+                      });
+                      String text = '$activeLetter, for Axe';
+                      tts.setRate(.9);
+                      tts.speak(text);
+                    },
+                    child: Text(
+                      'A',
+                      style: TextStyle(
+                        fontSize: 44,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 5),
+                  // TextWidget(text: 'A'),
+                  const SizedBox(width: 5),
+                  const TextWidget(text: 'B'),
+                  const SizedBox(width: 5),
+                  const TextWidget(text: 'C'),
+                  const SizedBox(width: 10),
+                  const TextWidget(text: 'D'),
+                  const SizedBox(width: 10),
+                  const TextWidget(text: 'E'),
+                  const SizedBox(width: 10),
+                  const TextWidget(text: 'F'),
+                  const SizedBox(width: 10),
+                  const TextWidget(text: 'G'),
+                  const SizedBox(width: 10),
+                  const TextWidget(text: 'H'),
+                  const SizedBox(width: 10),
+                  const TextWidget(text: 'I'),
+                  const SizedBox(width: 10),
+                  const TextWidget(text: 'J'),
+                  const SizedBox(width: 10),
+                  const TextWidget(text: 'K'),
+                  const SizedBox(width: 5),
+                  const TextWidget(text: 'L'),
+                  const SizedBox(width: 10),
+                  const TextWidget(text: 'M'),
+                  const SizedBox(width: 10),
+                  const TextWidget(text: 'N'),
+                  const SizedBox(width: 5),
+                  const TextWidget(text: 'O'),
+                  const SizedBox(width: 5),
+                  const TextWidget(text: 'P'),
+                  const SizedBox(width: 5),
+                  const TextWidget(text: 'Q'),
+                  const SizedBox(width: 5),
+                  const TextWidget(text: 'R'),
+                  const SizedBox(width: 5),
+                  const TextWidget(text: 'S'),
+                  const SizedBox(width: 5),
+                  const TextWidget(text: 'T'),
+                  const SizedBox(width: 5),
+                  const TextWidget(text: 'U'),
+                  const SizedBox(width: 5),
+                  const TextWidget(text: 'V'),
+                  const SizedBox(width: 5),
+                  const TextWidget(text: 'W'),
+                  const SizedBox(width: 5),
+                  const TextWidget(text: 'X'),
+                  const SizedBox(width: 5),
+                  const TextWidget(text: 'Y'),
+                  const SizedBox(width: 5),
+                  const TextWidget(text: 'Z'),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
@@ -169,7 +192,11 @@ class _TextWidgetState extends State<TextWidget> {
       },
       child: Text(
         widget.text,
-        style: const TextStyle(fontSize: 50, fontWeight: FontWeight.w900),
+        style: TextStyle(
+          fontSize: 43,
+          fontWeight: FontWeight.w900,
+          color: Colors.black,
+        ),
       ),
     );
   }

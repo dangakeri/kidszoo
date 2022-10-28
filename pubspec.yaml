@@ -39,6 +39,10 @@ dependencies:
   flutter_svg: ^1.1.5
   text_to_speech: ^0.2.3
 
+  provider:
+  shared_preferences: ^2.0.15
+  share_plus: ^6.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
