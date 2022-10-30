@@ -23,7 +23,7 @@ class _VocabState extends State<Vocab> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            width: MediaQuery.of(context).size.width * 0.75,
+            width: MediaQuery.of(context).size.width * 0.70,
             child: Column(
               children: [
                 const SizedBox(height: 30),
@@ -126,7 +126,7 @@ class _VocabState extends State<Vocab> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 10),
+                      SizedBox(width: 20),
                       GestureDetector(
                         onTap: () {
                           setState(() {
@@ -167,7 +167,7 @@ class _VocabState extends State<Vocab> {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 10),
+                      const SizedBox(width: 20),
                       GestureDetector(
                         onTap: () {
                           setState(() {
@@ -209,7 +209,7 @@ class _VocabState extends State<Vocab> {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 10),
+                      const SizedBox(width: 20),
                       GestureDetector(
                         onTap: () {
                           setState(() {
@@ -293,7 +293,7 @@ class _VocabState extends State<Vocab> {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 15),
+                      const SizedBox(width: 25),
                       GestureDetector(
                         onTap: () {
                           setState(() {
@@ -335,7 +335,7 @@ class _VocabState extends State<Vocab> {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 15),
+                      const SizedBox(width: 20),
                       GestureDetector(
                         onTap: () {
                           setState(() {
@@ -419,7 +419,7 @@ class _VocabState extends State<Vocab> {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 5),
+                      const SizedBox(width: 15),
                       GestureDetector(
                         onTap: () {
                           setState(() {
@@ -461,7 +461,7 @@ class _VocabState extends State<Vocab> {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 5),
+                      const SizedBox(width: 15),
                       GestureDetector(
                         onTap: () {
                           setState(() {
@@ -503,7 +503,7 @@ class _VocabState extends State<Vocab> {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 5),
+                      const SizedBox(width: 15),
                       GestureDetector(
                         onTap: () {
                           setState(() {
@@ -545,7 +545,7 @@ class _VocabState extends State<Vocab> {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 5),
+                      const SizedBox(width: 15),
                       GestureDetector(
                         onTap: () {
                           setState(() {
@@ -588,7 +588,7 @@ class _VocabState extends State<Vocab> {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 5),
+                      const SizedBox(width: 15),
                       GestureDetector(
                         onTap: () {
                           setState(() {
@@ -630,7 +630,7 @@ class _VocabState extends State<Vocab> {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 5),
+                      const SizedBox(width: 15),
                       GestureDetector(
                         onTap: () {
                           setState(() {

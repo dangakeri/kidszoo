@@ -74,6 +74,7 @@ class _SettingsState extends State<Settings> {
               },
             ),
             title: const Text('Dark theme'),
+            subtitle: const Text('Toggle to change theme'),
           ),
         ),
         // GestureDetector(
@@ -90,7 +91,10 @@ class _SettingsState extends State<Settings> {
             showDialog(
               context: context,
               builder: (context) => CupertinoAlertDialog(
-                title: const Text('Contact Us'),
+                title: const Padding(
+                  padding: EdgeInsets.only(bottom: 20.0),
+                  child: Text('Contact Us'),
+                ),
                 content: Row(
                   children: [
                     GestureDetector(
@@ -98,33 +102,42 @@ class _SettingsState extends State<Settings> {
                       child: Container(
                         child: Column(
                           children: const [
-                            Icon(Icons.email),
+                            Icon(
+                              Icons.email,
+                              size: 40,
+                            ),
                             SizedBox(height: 10),
                             Text('Email'),
                           ],
                         ),
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     GestureDetector(
                       onTap: _launchPhone,
                       child: Container(
                         child: Column(
                           children: const [
-                            Icon(Icons.call),
+                            Icon(
+                              Icons.call,
+                              size: 40,
+                            ),
                             SizedBox(height: 10),
                             Text('Phone'),
                           ],
                         ),
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     GestureDetector(
                       onTap: _launchWhatsapp,
                       child: Container(
                         child: Column(
                           children: const [
-                            Icon(Icons.message),
+                            Icon(
+                              Icons.message,
+                              size: 40,
+                            ),
                             SizedBox(height: 10),
                             Text('Message'),
                           ],
@@ -133,13 +146,20 @@ class _SettingsState extends State<Settings> {
                     ),
                   ],
                 ),
-                actions: [CloseButton()],
+                actions: [
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text('Close'))
+                ],
               ),
             );
           }),
           child: const ListTile(
             leading: Icon(Icons.contact_mail),
             title: Text('Contact us'),
+            subtitle: Text('Talk to us'),
           ),
         ),
         GestureDetector(
@@ -154,23 +174,23 @@ class _SettingsState extends State<Settings> {
                       height: 50,
                       width: 50,
                     ),
-                    SizedBox(width: 30),
+                    const SizedBox(width: 30),
                     Column(
-                      children: [
-                        const Text('Kidszoo'),
+                      children: const [
+                        Text('Kidszoo'),
                         SizedBox(height: 5),
-                        Text('1.0.0'),
+                        Text('V1.0.0 Shark'),
                       ],
                     ),
                   ],
                 ),
-                content: Text(
+                content: const Text(
                   'Kidszoo is an application designed and built to help children learn basic numbers,alphabets,reading and shapes',
                   style: TextStyle(fontSize: 15),
                 ),
                 actions: [
                   CupertinoButton(
-                      child: Text("Close"),
+                      child: const Text("Close"),
                       onPressed: () {
                         Navigator.of(context).pop();
                       })
@@ -194,6 +214,7 @@ class _SettingsState extends State<Settings> {
           child: const ListTile(
             leading: Icon(Icons.info),
             title: Text('About'),
+            subtitle: Text('V1.0.0 Shark'),
           ),
         )
       ]),
