@@ -4,7 +4,7 @@ class Styles {
   static ThemeData themeData(bool isDarkTheme, BuildContext context) {
     return ThemeData(
       useMaterial3: true,
-      fontFamily: 'Gordita',
+      fontFamily: 'Sophia',
       scaffoldBackgroundColor:
           isDarkTheme ? Colors.black : Colors.grey.shade300,
       primarySwatch: Colors.blue,

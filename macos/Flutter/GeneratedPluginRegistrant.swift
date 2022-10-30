@@ -6,7 +6,7 @@ import FlutterMacOS
 import Foundation
 
 import path_provider_macos
-import share_plus
+import share_plus_macos
 import shared_preferences_macos
 import text_to_speech_macos
 import url_launcher_macos

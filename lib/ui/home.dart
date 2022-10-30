@@ -67,7 +67,7 @@ class Home extends StatelessWidget {
                       ),
                       CardWidget(
                         image: Image.asset(
-                          'assets/reading logo.png',
+                          'assets/reading.png',
                           height: 80,
                           width: 80,
                         ),
@@ -99,7 +99,7 @@ class Home extends StatelessWidget {
                       ),
                       CardWidget(
                         image: Image.asset(
-                          'assets/Vocab logo.png',
+                          'assets/vocab.png',
                           height: 80,
                           width: 80,
                         ),
@@ -183,11 +183,8 @@ class CardWidget extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.1),
-
               spreadRadius: 2,
-
               blurRadius: 2,
-
               offset: const Offset(0, 3), // changes position of shadow
             ),
           ],
@@ -213,7 +210,7 @@ class CardWidget extends StatelessWidget {
             ),
             Text(
               subtitle,
-              style: const TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 15),
             ),
           ],
         ),

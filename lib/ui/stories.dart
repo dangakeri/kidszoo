@@ -28,12 +28,17 @@ class Stories extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).pop();
           },
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back_ios_new,
-            color: Colors.black,
+            color: Theme.of(context).buttonColor,
           ),
         ),
-        title: const Text('Stories', style: TextStyle(color: Colors.black)),
+        title: Text(
+          'Stories',
+          style: TextStyle(
+            color: Theme.of(context).buttonColor,
+          ),
+        ),
       ),
       body: ListView(
         physics: const BouncingScrollPhysics(),

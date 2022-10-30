@@ -47,7 +47,7 @@ class _MyAppState extends State<MyApp> {
             builder: (context, themeData, child) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: 'Move',
+            title: 'Kidszoo',
             theme: Styles.themeData(
               themeChangeProvider.darkTheme,
               context,
