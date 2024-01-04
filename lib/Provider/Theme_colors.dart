@@ -9,11 +9,11 @@ class Styles {
           isDarkTheme ? Colors.black : Colors.grey.shade300,
       primarySwatch: Colors.blue,
       primaryColor: isDarkTheme ? Colors.black : Colors.grey.shade300,
-      accentColor: Colors.white,
+      // accentColor: Colors.white,
       backgroundColor:
           isDarkTheme ? Color.fromARGB(255, 0, 0, 0) : Colors.white,
       indicatorColor: isDarkTheme ? Colors.white : Color(0xFF545d5C),
-      buttonColor: isDarkTheme ? Colors.white : Color(0xff323232),
+      splashColor: isDarkTheme ? Colors.white : Color(0xff323232),
       hintColor: isDarkTheme ? Colors.grey.shade300 : Colors.grey.shade800,
       highlightColor: isDarkTheme ? Colors.white30 : Color(0xffFCE192),
       hoverColor: isDarkTheme ? Color(0xff3A3A3B) : Color(0xff4285F4),

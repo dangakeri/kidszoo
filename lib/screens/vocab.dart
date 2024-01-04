@@ -50,7 +50,7 @@ class _VocabState extends State<Vocab> {
                   'Match the correct\nAlphabet by pressing\nletters on the right',
                   style: TextStyle(
                     fontSize: 20,
-                    color: Theme.of(context).buttonColor,
+                    color: Theme.of(context).splashColor,
                   ),
                 ),
                 const SizedBox(
@@ -68,7 +68,7 @@ class _VocabState extends State<Vocab> {
                 //   style: TextStyle(
                 //     fontSize: 90,
                 //     fontWeight: FontWeight.bold,
-                //     color: Theme.of(context).buttonColor,
+                //     color: Theme.of(context).splashColor,
                 //   ),
                 // ),
                 const SizedBox(height: 80),
@@ -88,7 +88,7 @@ class _VocabState extends State<Vocab> {
                   style: TextStyle(
                     fontSize: 50,
                     fontWeight: FontWeight.bold,
-                    color: Theme.of(context).buttonColor,
+                    color: Theme.of(context).splashColor,
                   ),
                 ),
               ],

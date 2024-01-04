@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../consts/app_colors.dart';
-
 import 'package:text_to_speech/text_to_speech.dart';
 
 class Shapes extends StatelessWidget {
@@ -23,13 +21,13 @@ class Shapes extends StatelessWidget {
           },
           icon: Icon(
             Icons.arrow_back_ios_new,
-            color: Theme.of(context).buttonColor,
+            color: Theme.of(context).splashColor,
           ),
         ),
         title: Text(
           'Shapes',
           style: TextStyle(
-            color: Theme.of(context).buttonColor,
+            color: Theme.of(context).splashColor,
           ),
         ),
       ),
@@ -37,7 +35,7 @@ class Shapes extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         // shrinkWrap: true,
         children: [
-          Row(
+          const Row(
             children: [],
           ),
           Padding(

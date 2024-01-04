@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kidszoo/Provider/theme.dart';
-import 'package:kidszoo/ui/splash_screen.dart';
+import 'package:kidszoo/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'Provider/Theme_colors.dart';
 

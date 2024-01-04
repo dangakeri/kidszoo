@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:text_to_speech/text_to_speech.dart';
 
-import '../consts/app_colors.dart';
-
 class Numbers extends StatelessWidget {
   const Numbers({super.key});
 
@@ -22,13 +20,13 @@ class Numbers extends StatelessWidget {
           },
           icon: Icon(
             Icons.arrow_back_ios_new,
-            color: Theme.of(context).buttonColor,
+            color: Theme.of(context).splashColor,
           ),
         ),
         title: Text(
           'Numbers',
           style: TextStyle(
-            color: Theme.of(context).buttonColor,
+            color: Theme.of(context).splashColor,
           ),
         ),
       ),

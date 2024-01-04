@@ -1,16 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kidszoo/consts/app_colors.dart';
-import 'package:kidszoo/stories/ass_has_no_brain.dart';
-import 'package:kidszoo/stories/golden_swan.dart';
-import 'package:kidszoo/stories/heron_and_crab.dart';
-import 'package:kidszoo/stories/hunter_and_doves.dart';
-import 'package:kidszoo/stories/little_mice.dart';
-import 'package:kidszoo/stories/old_tiger.dart';
-import 'package:kidszoo/stories/sages_daughter.dart';
-import 'package:kidszoo/stories/shivering_monkey.dart';
-import 'package:kidszoo/stories/talkative_tortoise.dart';
-
-import '../stories/blind_vulture.dart';
+import 'package:kidszoo/stories/stories.dart';
+import 'package:kidszoo/stories/stories_details.dart';
 
 class Stories extends StatelessWidget {
   const Stories({super.key});
@@ -30,18 +20,18 @@ class Stories extends StatelessWidget {
           },
           icon: Icon(
             Icons.arrow_back_ios_new,
-            color: Theme.of(context).buttonColor,
+            color: Theme.of(context).splashColor,
           ),
         ),
         title: Text(
           'Stories',
           style: TextStyle(
-            color: Theme.of(context).buttonColor,
+            color: Theme.of(context).splashColor,
           ),
         ),
       ),
       body: ListView(
-        physics: const BouncingScrollPhysics(),
+        // physics: const BouncingScrollPhysics(),
         // shrinkWrap: true,
         children: [
           Padding(
@@ -61,151 +51,202 @@ class Stories extends StatelessWidget {
                     childAspectRatio: 0.8,
                     children: [
                       StoriesTileWidget(
-                        title: 'Ass has no brain',
+                        // title: 'Ass has no brain',
+                        title: stories[0]["title"],
                         callBack: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      const AssNoBrain()));
+                                      StoriesDetailsPage(
+                                        title: stories[0]["title"],
+                                        imagePath: stories[0]["imagePath"],
+                                        story: stories[0]["story"],
+                                        lesson: stories[0]["lesson"],
+                                      )));
                         },
                         image: Image.asset(
-                          'assets/Ass.png',
+                          stories[0]["imagePath"],
                           height: 100,
                           width: 100,
                         ),
                       ),
                       StoriesTileWidget(
-                        title: 'Birds & monkeys',
+                        title: stories[1]["title"],
                         callBack: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      const ShiveringMonkey()));
+                                      StoriesDetailsPage(
+                                        title: stories[1]["title"],
+                                        imagePath: stories[1]["imagePath"],
+                                        story: stories[1]["story"],
+                                        lesson: stories[1]["lesson"],
+                                      )));
                         },
                         image: Image.asset(
-                          'assets/Birds and monkeys.png',
+                          stories[1]["imagePath"],
                           height: 100,
                           width: 100,
                         ),
                       ),
                       StoriesTileWidget(
-                        title: 'Monkey and the Crocodile',
+                        title: stories[2]["title"],
                         callBack: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      const MonkeyAndCrocodile()));
+                                      StoriesDetailsPage(
+                                        title: stories[2]["title"],
+                                        imagePath: stories[2]["imagePath"],
+                                        story: stories[2]["story"],
+                                        lesson: stories[2]["lesson"],
+                                      )));
                         },
                         image: Image.asset(
-                          'assets/Monkey and Crocodile.png',
+                          stories[2]["imagePath"],
                           height: 100,
                           width: 100,
                         ),
                       ),
                       StoriesTileWidget(
-                        title: 'Sages Daughter',
+                        title: stories[3]["title"],
                         callBack: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      const SagesDaughter()));
+                                      StoriesDetailsPage(
+                                        title: stories[3]["title"],
+                                        imagePath: stories[3]["imagePath"],
+                                        story: stories[3]["story"],
+                                        lesson: stories[3]["lesson"],
+                                      )));
                         },
                         image: Image.asset(
-                          'assets/sages daughter.png',
+                          stories[3]["imagePath"],
                           height: 100,
                           width: 100,
                         ),
                       ),
                       StoriesTileWidget(
-                        title: 'Old Tiger and greedy Traveller',
+                        title: stories[4]["title"],
                         callBack: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      const OldTiger()));
+                                      StoriesDetailsPage(
+                                        title: stories[4]["title"],
+                                        imagePath: stories[4]["imagePath"],
+                                        story: stories[4]["story"],
+                                        lesson: stories[4]["lesson"],
+                                      )));
                         },
                         image: Image.asset(
-                          'assets/old tiger.png',
+                          stories[4]["imagePath"],
                           height: 100,
                           width: 100,
                         ),
                       ),
                       StoriesTileWidget(
-                        title: 'Talkative Tortoise',
+                        title: stories[5]["title"],
                         callBack: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      const Talkative()));
+                                      StoriesDetailsPage(
+                                        title: stories[5]["title"],
+                                        imagePath: stories[5]["imagePath"],
+                                        story: stories[5]["story"],
+                                        lesson: stories[5]["lesson"],
+                                      )));
                         },
                         image: Image.asset(
-                          'assets/Talkative Tortoise.png',
+                          stories[5]["imagePath"],
                           height: 100,
                           width: 100,
                         ),
                       ),
                       StoriesTileWidget(
-                        title: 'Little Mice and big Elephants',
+                        title: stories[6]["title"],
                         callBack: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      const LittleMice()));
+                                      StoriesDetailsPage(
+                                        title: stories[6]["title"],
+                                        imagePath: stories[6]["imagePath"],
+                                        story: stories[6]["story"],
+                                        lesson: stories[6]["lesson"],
+                                      )));
                         },
                         image: Image.asset(
-                          'assets/little mice.png',
+                          stories[6]["imagePath"],
                           height: 100,
                           width: 100,
                         ),
                       ),
                       StoriesTileWidget(
-                        title: 'Golden Swan',
+                        title: stories[7]["title"],
                         callBack: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      const Golden()));
+                                      StoriesDetailsPage(
+                                        title: stories[7]["title"],
+                                        imagePath: stories[7]["imagePath"],
+                                        story: stories[7]["story"],
+                                        lesson: stories[7]["lesson"],
+                                      )));
                         },
                         image: Image.asset(
-                          'assets/golden swan.png',
+                          stories[7]["imagePath"],
                           height: 100,
                           width: 100,
                         ),
                       ),
                       StoriesTileWidget(
-                        title: 'Heron and the Crab',
+                        title: stories[8]["title"],
                         callBack: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      const Heron()));
+                                      StoriesDetailsPage(
+                                        title: stories[8]["title"],
+                                        imagePath: stories[8]["imagePath"],
+                                        story: stories[8]["story"],
+                                        lesson: stories[8]["lesson"],
+                                      )));
                         },
                         image: Image.asset(
-                          'assets/heron.png',
+                          stories[8]["imagePath"],
                           height: 100,
                           width: 100,
                         ),
                       ),
                       StoriesTileWidget(
-                        title: 'Hunter and Doves',
+                        title: stories[9]["title"],
                         callBack: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      const Hunter()));
+                                      StoriesDetailsPage(
+                                        title: stories[9]["title"],
+                                        imagePath: stories[9]["imagePath"],
+                                        story: stories[9]["story"],
+                                        lesson: stories[9]["lesson"],
+                                      )));
                         },
                         image: Image.asset(
-                          'assets/hunter.png',
+                          stories[9]["imagePath"],
                           height: 100,
                           width: 100,
                         ),
@@ -247,18 +288,14 @@ class StoriesTileWidget extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.1),
-
               spreadRadius: 2,
-
               blurRadius: 2,
-
               offset: const Offset(0, 3), // changes position of shadow
             ),
           ],
         ),
         child: Column(
           children: [
-            // const SizedBox(height: 10),
             image,
             const SizedBox(height: 10),
             Padding(

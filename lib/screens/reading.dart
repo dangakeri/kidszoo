@@ -66,12 +66,12 @@ class _ReadingState extends State<Reading> {
             },
             icon: Icon(
               Icons.arrow_back_ios_new,
-              color: Theme.of(context).buttonColor,
+              color: Theme.of(context).splashColor,
             )),
         title: Text(
           'Reading',
           style: TextStyle(
-            color: Theme.of(context).buttonColor,
+            color: Theme.of(context).splashColor,
           ),
         ),
       ),
@@ -85,7 +85,7 @@ class _ReadingState extends State<Reading> {
             width: MediaQuery.of(context).size.width * 0.7,
             decoration: BoxDecoration(
               border: Border.all(
-                color: Theme.of(context).buttonColor,
+                color: Theme.of(context).splashColor,
               ),
             ),
             child: Padding(
@@ -475,7 +475,7 @@ class _ReadingState extends State<Reading> {
                     height: 50,
                     width: 50,
                     decoration: BoxDecoration(
-                        color: Theme.of(context).buttonColor,
+                        color: Theme.of(context).splashColor,
                         borderRadius: BorderRadius.circular(50)),
                     child: const Center(
                       child: Text(
@@ -496,7 +496,7 @@ class _ReadingState extends State<Reading> {
                     height: 50,
                     width: 50,
                     decoration: BoxDecoration(
-                        color: Theme.of(context).buttonColor,
+                        color: Theme.of(context).splashColor,
                         borderRadius: BorderRadius.circular(50)),
                     child: const Center(
                       child: Text(
@@ -563,7 +563,7 @@ class _TextWidgetState extends State<TextWidget> {
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w500,
-                  // color: Theme.of(context).buttonColor,
+                  // color: Theme.of(context).splashColor,
                   color: Colors.black,
                 ),
               ),

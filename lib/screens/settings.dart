@@ -48,7 +48,7 @@ class _SettingsState extends State<Settings> {
         title: Text(
           'Settings',
           style: TextStyle(
-            color: Theme.of(context).buttonColor,
+            color: Theme.of(context).splashColor,
           ),
         ),
         leading: IconButton(
@@ -57,7 +57,7 @@ class _SettingsState extends State<Settings> {
           },
           icon: Icon(
             Icons.arrow_back_ios_new,
-            color: Theme.of(context).buttonColor,
+            color: Theme.of(context).splashColor,
           ),
         ),
       ),

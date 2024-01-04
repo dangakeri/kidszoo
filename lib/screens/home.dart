@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:kidszoo/consts/app_colors.dart';
-import 'package:kidszoo/ui/reading.dart';
-import 'package:kidszoo/ui/settings.dart';
-import 'package:kidszoo/ui/shapes.dart';
-import 'package:kidszoo/ui/stories.dart';
-import 'package:kidszoo/ui/vocab.dart';
+import 'package:kidszoo/screens/reading.dart';
+import 'package:kidszoo/screens/settings.dart';
+import 'package:kidszoo/screens/shapes.dart';
+import 'package:kidszoo/screens/stories.dart';
+import 'package:kidszoo/screens/vocab.dart';
 
 import 'numbers.dart';
 
